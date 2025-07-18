@@ -28,6 +28,42 @@ qwen_scratch_project/
 └── README.md                # Project overview & instructions
 ```
 
+
+## 🧠 Architecture Comparison
+
+
+
+<p align="center">
+  ![1750423589554](https://github.com/user-attachments/assets/665f2734-e34d-4ec6-86dd-5f7712da9688)
+</p>
+
+**Figure: Architecture comparison between LLaMA-3 8B and Qwen Scratch 0.6B (this project).**  
+This implementation replicates a **Qwen-style 0.6B parameter model**, intentionally scaled for single-GPU environments and educational experimentation.
+
+```bash
+
+| Feature                | LLaMA-3 8B         | Qwen Scratch 0.6B (This Project) |
+|------------------------|--------------------|----------------------------------|
+| **# Parameters**       | ~8 Billion         | ~0.6 Billion                     |
+| **Layers**             | 32                 | 20                               |
+| **Hidden Size**        | 8192               | 3072                             |
+| **Attention Heads**    | 32                 | 16                               |
+| **Attention Type**     | Grouped Query (GQA)| Grouped Query (GQA)              |
+| **Norm Type**          | RMSNorm            | RMSNorm                          |
+| **Position Embeddings**| RoPE               | RoPE                             |
+| **Context Length**     | 8K                 | 1024 (default)                   |
+
+```
+
+
+> **Why 0.6B?**  
+> This model size was chosen to balance **training feasibility** and **architectural completeness**. It includes all modern transformer components—like Grouped Query Attention (GQA), Rotary Position Embeddings (RoPE), and RMSNorm—while remaining trainable from scratch using a single GPU on limited data. It’s perfect for:
+> 
+> - Prototyping new architectural ideas (e.g., alternative normalization or position encoding)  
+> - Educational deep dives into LLM training internals  
+> - Testing small-scale capabilities of instruction-following or code modeling tasks
+
+
 ---
 
 ## 🚀 Quickstart
