@@ -3,39 +3,10 @@ A from-scratch PyTorch implementation of a Qwen-style Transformer language model
 
 ---
 
-## 📂 Folder Structure
-
-```
-qwen_scratch_project/
-├── checkpoints/              # Auto-populated: saved model checkpoints (ckpt_<step>.pt)
-├── data/
-│   ├── book.pdf             # Original PDF book
-│   ├── book.txt             # Extracted text file for training
-│   └── tokenizer/           # Byte-Level BPE files
-│       ├── vocab.json       # BPE vocabulary
-│       └── merges.txt       # BPE merge rules
-├── src/                     # Project source code
-│   ├── __init__.py          # Marks src as a Python package
-│   ├── config.py            # Model & training hyperparameters
-│   ├── dataset.py           # TextDataset & DataLoader factory
-│   ├── model.py             # RotaryEmbedding, RMSNorm, GQA, Transformer, QwenModel
-│   └── utils.py             # Checkpoint save & load utilities
-├── extract_text.py          # Script: extract text from PDF → book.txt
-├── train_tokenizer.py       # Script: train Byte-Level BPE tokenizer
-├── train.py                 # Main training script: pre-training loop & checkpointing
-├── test_tokenizer.py        # (Optional) Validate tokenizer encode/decode
-├── requirements.txt         # Python dependencies
-└── README.md                # Project overview & instructions
-```
-
 
 ## 🧠 Architecture Comparison
 
-
-
-<p align="center">
-  ![1750423589554](https://github.com/user-attachments/assets/665f2734-e34d-4ec6-86dd-5f7712da9688)
-</p>
+![1750423589554](https://github.com/user-attachments/assets/665f2734-e34d-4ec6-86dd-5f7712da9688)
 
 **Figure: Architecture comparison between LLaMA-3 8B and Qwen Scratch 0.6B (this project).**  
 This implementation replicates a **Qwen-style 0.6B parameter model**, intentionally scaled for single-GPU environments and educational experimentation.
@@ -62,6 +33,34 @@ This implementation replicates a **Qwen-style 0.6B parameter model**, intentiona
 > - Prototyping new architectural ideas (e.g., alternative normalization or position encoding)  
 > - Educational deep dives into LLM training internals  
 > - Testing small-scale capabilities of instruction-following or code modeling tasks
+
+
+
+
+## 📂 Folder Structure
+
+```
+qwen_scratch_project/
+├── checkpoints/              # Auto-populated: saved model checkpoints (ckpt_<step>.pt)
+├── data/
+│   ├── book.pdf             # Original PDF book
+│   ├── book.txt             # Extracted text file for training
+│   └── tokenizer/           # Byte-Level BPE files
+│       ├── vocab.json       # BPE vocabulary
+│       └── merges.txt       # BPE merge rules
+├── src/                     # Project source code
+│   ├── __init__.py          # Marks src as a Python package
+│   ├── config.py            # Model & training hyperparameters
+│   ├── dataset.py           # TextDataset & DataLoader factory
+│   ├── model.py             # RotaryEmbedding, RMSNorm, GQA, Transformer, QwenModel
+│   └── utils.py             # Checkpoint save & load utilities
+├── extract_text.py          # Script: extract text from PDF → book.txt
+├── train_tokenizer.py       # Script: train Byte-Level BPE tokenizer
+├── train.py                 # Main training script: pre-training loop & checkpointing
+├── test_tokenizer.py        # (Optional) Validate tokenizer encode/decode
+├── requirements.txt         # Python dependencies
+└── README.md                # Project overview & instructions
+```
 
 
 ---
