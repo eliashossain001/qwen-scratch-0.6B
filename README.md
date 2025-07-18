@@ -82,7 +82,7 @@ This will:
 ## 🔍 Project Details
 
 * **Model architecture**: 20-layer Transformer with grouped-query attention, RMSNorm, SiLU-based feed-forward, custom Rotary Position Embeddings.
-* **Tokenizer**: Byte-Level BPE (30k vocab) trained on your PDF text.
+* **Tokenizer**: Byte-Level BPE (30k vocab) trained on a PDF text.
 * **Training settings**:
 
   * Context length: 1024 tokens
