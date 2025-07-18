@@ -1,0 +1,5 @@
+torch>=1.13.0
+tokenizers>=0.13.2
+tqdm>=4.64.0
+rotary-emb>=0.1.0          # for our RotaryEmbedding import
+pdfplumber>=0.7.6          # to extract text from PDF

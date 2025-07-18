@@ -1,0 +1,39 @@
+# Byte-level file
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+.env/
+venv/
+env/
+.eliasenv/
+.codeenv/
+
+# Data files
+data/book.txt
+data/tokenizer/*
+
+# Checkpoints
+checkpoints/
+
+# Editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Python environment
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Notebook checkpoints
+.ipynb_checkpoints/
