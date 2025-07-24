@@ -1,5 +1,5 @@
 from tokenizers import ByteLevelBPETokenizer
-
+import os 
 # 1. Initialize
 tokenizer = ByteLevelBPETokenizer()
 
@@ -14,5 +14,7 @@ tokenizer.train(
 )
 
 # 3. Save to disk (creates vocab.json & merges.txt)
+os.makedirs("data/tokenizer", exist_ok=True)
+tokenizer.save_model("data/tokenizer")
 tokenizer.save_model("data/tokenizer")
 print("Tokenizer files written to data/tokenizer/")
